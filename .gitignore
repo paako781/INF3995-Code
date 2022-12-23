@@ -1,0 +1,14 @@
+#Angular-dependencies
+node_modules/
+client/node_modules
+client/karma.conf.js
+.angular
+package-lock.json
+.DS_Store
+
+# IDE - VSCode
+.vscode
+
+#Flask
+server/__pycache__/
+server/cache/

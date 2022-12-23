@@ -1,0 +1,31 @@
+<div class="parent">
+  <div class="div1">
+    <mat-form-field appearance="fill">
+      <mat-label>Drone ID</mat-label>
+      <mat-select
+        [(ngModel)]="physicalDroneIdValue"
+        name="drone"
+        *ngIf="!this.modeService.curState.mode"
+        (selectionChange)="changePhysicalDrone()"
+      >
+        <mat-option value="drone 1"> Drone 1 </mat-option>
+        <mat-option value="drone 2"> Drone 2 </mat-option>
+      </mat-select>
+      <mat-select
+        [(ngModel)]="simulationDroneIdValue"
+        name="simuDrone"
+        *ngIf="this.modeService.curState.mode"
+        (selectionChange)="changeSimulationDrone()"
+      >
+        <mat-option *ngFor="let drone of simuDroneChoice" [value]="drone">{{
+          drone
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div #wrapper id="wrapper" (resized)="onResized($event)">
+    <div>
+      <canvas #drone1></canvas>
+    </div>
+  </div>
+</div>

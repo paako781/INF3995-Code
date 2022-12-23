@@ -1,0 +1,42 @@
+#wrapper{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.console {
+    background-color: rgb(159,159,159);
+    //background-color: white;
+    width: 98%;
+    height: 100%;
+    border-radius: 5px;
+    // padding: 10px;
+    text-align: start;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.black{
+    background-color: rgb(159,159,159);
+    width: 100%;
+    
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 100%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100%;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+    height: inherit;
+    width: inherit;
+}
+
+.div2 {
+    grid-area: 1 / 2 / 2 / 3;
+}

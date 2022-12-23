@@ -1,0 +1,17 @@
+FROM python:3.9.10-slim-buster
+
+WORKDIR /usr/src/app
+
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+RUN python3 -m pip install flask
+RUN pip3 install cflib
+
+#Avoid flask errors
+RUN pip install Flask-Cors
+COPY app.py .
+ENTRYPOINT FLASK_APP=app flask run --host=0.0.0.0
+
+EXPOSE 5000

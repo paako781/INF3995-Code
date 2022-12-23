@@ -1,0 +1,25 @@
+.table-container
+{
+    //max-width: 100%;
+    height: inherit;
+    max-height: inherit;
+    overflow: auto;
+}
+table {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    width : 100%;
+    //height: fit-content;
+    min-width: 0;
+    border-radius: 5px;
+    //overflow: auto;
+}
+
+.data{
+    text-align: center;
+}
+
+th.mat-header-cell {
+    text-align: center;
+}

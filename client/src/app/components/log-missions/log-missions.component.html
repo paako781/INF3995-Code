@@ -1,0 +1,47 @@
+
+
+<mat-form-field appearance = "fill">
+  <mat-label>Choisir Type</mat-label>
+    <mat-select [(ngModel)]="this.mode.selectedMode" name="modeMission">
+      <mat-option *ngFor="let type of this.mode.modeSelect" [value]="type.value">
+        {{type.viewValue}}
+      </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #missions class="sidenav" mode="side" >
+    <mat-accordion *ngIf="this.mode.selectedMode === 'Physique'">
+      <mat-expansion-panel *ngFor="let data of this.log.mapPhysique | keyvalue" hideToggle>
+        <mat-expansion-panel-header class="missionName">
+            Date et heure de la mission: {{data.key}}
+        </mat-expansion-panel-header>
+        <ng-container *ngFor="let j of data.value; index as k">
+          <th> Id,Distance,Position(x,y,z), Capteur:  </th> 
+          <td> {{ data.value[k] }} </td> <br>
+        </ng-container>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion *ngIf="this.mode.selectedMode === 'Simulation'">
+      <mat-expansion-panel *ngFor="let data of this.log.mapSimulation | keyvalue" hideToggle>
+        <mat-expansion-panel-header >
+          {{data.key}}
+        </mat-expansion-panel-header>
+        <ng-container *ngFor="let j of data.value; index as k">
+          <th> Commande,Id,Position(x,y,z), Capteur:  </th> 
+          <td> {{ data.value[k] }} </td> <br>
+        </ng-container>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <button class="btn" type="button" mat-button (click)="missions.toggle()">
+      Missions Antérieurs
+    </button>
+  </div>
+</mat-drawer-container>
+
+
+  

@@ -1,0 +1,56 @@
+<div class="parent">
+  <div class="div1">
+    <app-menu class="toolbar"></app-menu>
+  </div>
+  <div class="div2">
+    <mat-drawer-container class="container" >
+      <table class="table" matSort (matSortChange)="sortData($event)">
+        <tr>
+          <th mat-sort-header="tempsMission">Temps de la Mission</th>
+          <th mat-sort-header="tempsVol">Durée de Vol</th>
+          <th mat-sort-header="nbsDronesPhys">Nombres de drones physique</th>
+          <th mat-sort-header="nbsDronesSimul">
+            Nombres de drones en simulation
+          </th>
+          <th mat-sort-header="distance">Distance parcouru</th>
+        </tr>
+
+        <tr class="data" *ngFor="let mission of this.dataService.dataMissions">
+          <td>{{ mission.tempsMission }}</td>
+          <td>{{ mission.tempsVol }} s</td>
+          <td>{{ mission.nbsDronesPhys }}</td>
+          <td>{{ mission.nbsDronesSimul }}</td>
+          <td>{{ mission.distance }} cm</td>
+          <td>
+            <button mat-raised-button (click)="getMissionData(mission.id)">
+              Map
+            </button>
+          </td>
+          <td>
+            <button mat-raised-button (click)="deleteMission(mission.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </table>
+    </mat-drawer-container>
+  </div>
+  <div class="div3">
+    <app-log-missions></app-log-missions>
+  </div>
+
+  <div class="div4">
+    <mat-form-field appearance="fill">
+      <mat-label>Choisir Drone</mat-label>
+      <mat-select [(ngModel)]="this.dataService.drone" name="modeMission" (selectionChange)="updateMap(this.dataService.drone)">
+          <mat-option *ngFor="let drone of this.dataService.mission.mapData" [value]="drone.id">
+              {{drone.id}}
+          </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="div5" >
+    <canvas #map></canvas>
+  </div>
+</div>

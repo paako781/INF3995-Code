@@ -1,0 +1,27 @@
+<div class="parent">
+  <div class="div1">
+    <mat-toolbar color="primary">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>{{ this.modeService.mode }}</span>
+    </mat-toolbar>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="onSelectedMenu('Physique')">
+        <span>Physique</span>
+      </button>
+      <button mat-menu-item (click)="onSelectedMenu('Simulation')">
+        <span>Simulation</span>
+      </button>
+      <button mat-menu-item (click)="onSelectedMenu('Database')">
+        <span>Database</span>
+      </button>
+    </mat-menu>
+  </div>
+  <div class="div2">
+    <div id="app-name">App Poly-Fly</div>
+  </div>
+  <div class="div3">
+    <div id="team">Team 101</div>
+  </div>
+</div>

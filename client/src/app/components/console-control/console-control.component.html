@@ -1,0 +1,20 @@
+<div>
+  <button
+    mat-fab
+    color="primary"
+    aria-label="Example icon button with a delete icon"
+    (click)="toggleConsoleVisibility()"
+    *ngIf="!this.modeService.curState.consoleVisible"
+  >
+    <mat-icon>code</mat-icon>
+  </button>
+  <button
+    mat-fab
+    color="warn"
+    aria-label="Example icon button with a delete icon"
+    (click)="toggleConsoleVisibility()"
+    *ngIf="this.modeService.curState.consoleVisible"
+  >
+    <mat-icon>code</mat-icon>
+  </button>
+</div>

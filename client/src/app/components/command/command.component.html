@@ -1,0 +1,85 @@
+<div class="physique" *ngIf="!this.modeService.curState.mode">
+  <div class="div1">
+    <button mat-raised-button class="button" (click)="identifier(1)">
+      Identifier1
+    </button>
+  </div>
+  <div class="div2">
+    <button mat-raised-button class="button" (click)="identifier(2)">
+      Identifier2
+    </button>
+  </div>
+  <div class="div9">
+    <button
+      mat-raised-button
+      color="accent"
+      class="button"
+      (click)="makeP2P()"
+    >
+      Peer to Peer
+    </button>
+  </div>
+  <div class="div3">
+    <button
+      mat-raised-button
+      color="primary"
+      class="button"
+      (click)="lancerMission()"
+    >
+      Lancer mission
+    </button>
+  </div>
+  <div class="div4">
+    <button
+      mat-raised-button
+      color="warn"
+      class="button"
+      (click)="terminerMission()"
+    >
+      Terminer mission
+    </button>
+  </div>
+  <div class="div5">
+    <button
+      mat-raised-button
+      color="accent"
+      class="button"
+      (click)="retourBase()"
+    >
+      Retour base
+    </button>
+  </div>
+</div>
+
+<div class="simulation" *ngIf="this.modeService.curState.mode">
+  <div class="div6">
+    <button
+      mat-raised-button
+      color="primary"
+      class="button"
+      (click)="lancerMission()"
+    >
+      Lancer mission
+    </button>
+  </div>
+  <div class="div7">
+    <button
+      mat-raised-button
+      color="warn"
+      class="button"
+      (click)="terminerMission()"
+    >
+      Terminer mission
+    </button>
+  </div>
+  <div class="div8">
+    <button
+      mat-raised-button
+      color="accent"
+      class="button"
+      (click)="retourBase()"
+    >
+      Retour base
+    </button>
+  </div>
+</div>

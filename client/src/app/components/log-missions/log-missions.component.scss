@@ -1,0 +1,50 @@
+.container {
+  height: 77%;
+  width: 100%;
+  background-color: #f6f9ff;
+}
+
+.sidenav-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f9ff;
+
+  
+}
+  
+.sidenav {
+  height: 90%;
+  width:80%;
+  background-color: #E3F0FF;
+
+}
+  
+.btn {
+  white-space: nowrap;
+  position: relative;
+  margin : 5px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: #E3F0FF;
+  border: 2px outset #e4e4e4;
+  padding: 5px 10px;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+              inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+  
+.btn:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+  
+ .mat-form-field + .mat-form-field {
+   margin-left: 8px;
+}
+
+.missionName {
+  font-size: 20px;
+  font-weight: bold;
+
+}
+  

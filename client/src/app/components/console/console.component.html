@@ -1,0 +1,21 @@
+<div class="parent">
+  <div
+    class="div1"
+    id="wrapper"
+    *ngIf="this.modeService.curState.consoleVisible"
+  >
+    <div class="console">
+      <div class="black" *ngFor="let log of this.logService.curLog">
+        <span style="color: rgb(59, 252, 0)">@drone{{ log.id }} </span>
+        <span style="color: white"
+          >(x={{ log.position.positionX }}, y={{ log.position.positionY }}, z={{
+            log.position.positionZ
+          }}, F={{ log.sensorData.front }}, B={{ log.sensorData.back }}, L={{
+            log.sensorData.left
+          }}, R={{ log.sensorData.right }}) <br
+        /></span>
+      </div>
+    </div>
+  </div>
+  <div class="div2"><app-console-control></app-console-control></div>
+</div>
