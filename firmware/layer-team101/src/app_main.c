@@ -76,13 +76,6 @@ void appMain()
     // Battery level
     sendBatteryLevel();
 
-    // Path
-    // if(curStateCode != IDLE && curStateCode != IDENTIFY)
-    // {
-    //   path[++cpt] = curStateCode;
-    //   consolePrintf("registered=%i", curStateCode);
-    // }
-
     consolePrintf("main : x=%f y=%f ux=%f uy=%f head=%f\n", (double)computedPos.x, (double)computedPos.y, (double)computedPos.uVec.x, (double)computedPos.uVec.y, (double)computedPos.uVec.heading);
 
     // Compute current state
