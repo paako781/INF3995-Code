@@ -43,5 +43,4 @@ void updateFlightData(volatile FlightData* fd)
     fd->position.yaw = logGetFloat(idYaw);
     fd->position.pitch = logGetFloat(idPitch);
     fd->position.roll = logGetFloat(idRoll);
-    //consolePrintf("MAIN x=%f y=%f z=%f\n", (double)fd->position.x, (double)fd->position.y, (double)fd->position.z);
 }

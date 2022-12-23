@@ -140,14 +140,7 @@ void sendFlightState(void* param)
         if (*angleRates[i] > MAX_INCLINATION || *angleRates[i] < (-1.0f) * MAX_INCLINATION)
         {
           strcpy(ls.curStateText, CRASHED_TEXT);
-          // consolePrintf("ACCIDENT");
-          // if(i == 0)
-          //   consolePrintf("y=");
-          // else if(i == 1)
-          //   consolePrintf("p="); 
-          // else if(i == 2)
-          //   consolePrintf("r=");
-
+      
           consolePrintf("%f\n", (double)*angleRates[i]);  
         }
 
